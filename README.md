@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+﻿# Cafe Viana
 
-## Getting Started
+Production-quality static homepage for **Cafe Viana** ÔÇö cafe & artisan bakery at 139 Grant Rd, Baxter VIC 3911.
 
-First, run the development server:
+## Stack
+
+- Next.js App Router (JavaScript)
+- React
+- Tailwind CSS v4
+- GSAP + ScrollTrigger
+- `next/image` + `next/font` (DM Serif Display, Sora, Manrope)
+
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Business data
 
-## Learn More
+All verified business content lives in `data/cafeViana.js`:
 
-To learn more about Next.js, take a look at the following resources:
+- Address, phone, hours, maps URL
+- Facebook / Instagram
+- Breakfast, bakery, pies, lunch, pastries, drinks
+- Specials (`current: true` only rendered on the homepage)
+- Gallery + feedback themes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Prices:** all `null` until verified in store / current posts. UI shows ÔÇ£Ask in storeÔÇØ.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Specials:** set `current: false` when a promotion ends.
 
-## Deploy on Vercel
+## Images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Placeholders live in `public/images/cafe-viana/`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+They are temporary coloured stand-ins ÔÇö **replace with real Cafe Viana photography** before launch. Alt text marks them as illustrative placeholders.
+
+Preferred filenames match the brief (`.png` used so `next/image` can optimize correctly).
+
+## Design notes
+
+- Palette: oxblood plum, pistachio sage, buttercream, ash lilac, apricot ÔåÆ raspberry CTAs
+- European cafe / artisan bakery editorial language ÔÇö not an Italian restaurant claim
+- Every major section uses a distinct GSAP motion treatment
+- `prefers-reduced-motion` disables marquees, parallax, and long staggers
